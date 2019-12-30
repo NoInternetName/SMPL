@@ -122,7 +122,6 @@ namespace smpl
          */
         static double fRandom();
         static uint negExp(uint x);
-        static uint poisson(uint x);
         static void justify(std::string &s, size_t sz);
         static void justifyVec(std::vector<std::string> &vec, const std::vector<size_t> &widths);
         static void fillVec(char c, std::vector<std::string> &vec, const std::vector<size_t> &widths);
@@ -555,10 +554,6 @@ namespace smpl
 
     uint Engine::negExp(uint x) {
         return (uint) round(-log(1 - fRandom()) * x);
-    }
-
-    uint Engine::poisson(uint x) {
-        return (uint) round(x * -log(1.0 - fRandom()));
     }
 
     void Device::reserve(transact_t transactId) {
